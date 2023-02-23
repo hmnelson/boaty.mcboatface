@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xml:lang="en"
+xmlns:tal="http://xml.zope.org/namespaces/tal"
+xmlns:metal="http://xml.zope.org/namespaces/metal"
+xmlns:il8n="http://xml.zope.org/namespaces/il8n"
+lang="en"
+metal:use-macro="here/main_template/macros/master"
+il8n:domain="plone">
+
+<body>
+  <metal:main fill-slot="main"
+              tal:define="students python:view.getStudents()">
+    <h1>Student portfolios</h1>
+      
+    <div style="float: left; margin: 0 2em 2em 0;" 
+         tal:repeat="student students">
+      <metal:def tal:define="obj python:student.getObject()">
+        <span tal:content="obj/studentName"></span>
+      </metal:def>
+    </div>
+  </metal:main>
+</body>
+
+</html>

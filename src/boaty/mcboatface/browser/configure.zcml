@@ -17,5 +17,19 @@
       type="plone"
       directory="static"
       />
+  
+  <browser:page
+      for="*"
+      class=".student_views.StudentList"
+      name="student_list"
+      template="student_list.pt"
+      permission="cmf.ManagePortal" />
+  
+  <browser:page
+      for="*"
+      class=".student_views.StudentPortfolios"
+      name="student_portfolios"
+      template="student_portfolios.pt"
+      permission="cmf.ManagePortal" />
 
 </configure>
